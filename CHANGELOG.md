@@ -1,3 +1,14 @@
+## 2.0.0 (2023-04-19)
+
+### BREAKING CHANGE
+
+- No failure
+
+### Fix
+
+- no failure
+- add permission
+
 ## 1.0.0 (2023-04-19)
 
 ### BREAKING CHANGE
