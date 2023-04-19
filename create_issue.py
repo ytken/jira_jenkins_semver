@@ -34,6 +34,10 @@ def check_for_issue(summary):
         return None
 
 def create_jira_issue(issue_fields):
+    jira = get_jira()
+    jira.create_issue(issue_fields)
+
+def create_jira_issue_past(issue_fields):
     jira_options = {'server': 'http://172.18.0.1:7070'}
     jira = JIRA(options=jira_options, basic_auth=("a.ovchinnikova", "Rozalija"))
 #    key_cert_data = open("cert_data.txt","r").read()
@@ -41,4 +45,9 @@ def create_jira_issue(issue_fields):
 #    jira = JIRA(options=jira_options, oauth=oauth_dict)
     jira.create_issue(issue_fields)
 
-create_jira_issue(build_custom_issue(*sys.argv[1:]))
+input_values = sys.argv[1:]
+existing_issue = check_for_issue(input_values[0])
+if existing_issue:
+    get_jira().add_comment(existing_issue, open(input_values[2], "r").read())
+else:
+    create_jira_issue(build_custom_issue(input_values[0],input_values[1],input_values[2]))
