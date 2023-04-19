@@ -1,2 +1,2 @@
 [tool.commitizen]
-version = "2.0.0"  # This should be your current semver version
+version = "3.0.0"  # This should be your current semver version

@@ -1,3 +1,13 @@
+## 3.0.0 (2023-04-19)
+
+### BREAKING CHANGE
+
+- insert error
+
+### Fix
+
+- **test**: insert error
+
 ## 2.0.0 (2023-04-19)
 
 ### BREAKING CHANGE
